@@ -1,0 +1,26 @@
+{%extends 'base.html' %}
+{% block body %}
+    <table  class="table text-center ">
+        <h2 align="center">Issued book details</h2>
+            <tr>
+                
+                
+                <th>Book Name:</th>
+                <th>Issued Date</th>
+                <th>Expiry Date</th>
+                <th>Your Fine</th>
+                
+            </tr>
+
+            {% for p in std %}
+             <tr>
+                
+                <td>{{p.bookname}}</td>
+                <td>{{p.isdate|date:'Y-m-d'}}</td>
+                <td>{{p.expdate|date:'Y-m-d'}}</td>
+                <td>{{p.fine}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+
+{% endblock %}

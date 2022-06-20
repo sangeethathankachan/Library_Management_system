@@ -1,0 +1,36 @@
+{% extends 'baseadmin.html' %}
+{% block body %}
+<div class=" container">
+    <table  align="center" >
+
+    
+        <form action="{% url 'issue' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <h3 align="center">Issue Book</h3><br>
+                <div class="form-group" align="center">
+
+                    
+            
+            <input type="text" name="bookname" placeholder="Book Name" class="form-control w-25" ><br>
+            <input type="date" name="isdate" placeholder="Issued_date" class="form-control w-25" ><br>
+            <input type="date" name="expdate" placeholder="Expiry_date" class="form-control w-25" ><br>
+            <input type="text" name="fine" placeholder="fine" class="form-control w-25"><br>
+            <select class="form-control w-25" name="se1">
+                <option value="">Select Name</option><br>
+                {% for c in std %}
+                <option value="{{c.id}}">{{c.username}}</option><br>
+                {% endfor %}
+            </select>
+            
+           
+           <br> <input type="submit"  value="Submit" class="form-control w-25 btn btn-dark"><br>
+            
+       </div>
+       </form>
+       
+       </table>
+</div>
+
+
+
+{% endblock %}

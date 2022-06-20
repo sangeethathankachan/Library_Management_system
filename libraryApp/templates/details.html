@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container" style="background-color:white; margin-left:380px;width:560px;">
+    
+    <img src={{book.image.url}} style="height: 320px;margin-left:150px;">
+    <div style="margin-left:180px;">
+    <h5> {{book.name}}</h5>
+    <h5>${{book.price}}</h5>
+    <h5>{{book.author}}</h5>
+    <h5>{{book.details}}</h5>
+    
+</div>
+    </div>
+{% endblock %}
+
+
+
+
+<!--- <a href="{% url 'cart' book.id user.id %}" class="btn btn-light">Add to cart</a> ---->

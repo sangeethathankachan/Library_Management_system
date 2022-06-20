@@ -1,0 +1,22 @@
+{% extends 'baseadmin.html' %}
+{% block body %}
+
+<table  class="table text-center ">
+    <h2 align="center">Show Book categories</h2>
+    <tr>
+        <th>categories</th>
+        <th>Action</th>
+    </tr>
+    {% for p in cate %}
+   <tr>
+       <td>{{p.categoryname}}</td>
+      
+       <td>
+        <a href="{% url 'deletecat' p.id %}"class="btn btn-danger" >Delete</a></td>
+        
+        </tr>
+        {% endfor %}
+</table>
+
+
+{% endblock %}
